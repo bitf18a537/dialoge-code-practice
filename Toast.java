@@ -30,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(getApplicationContext(), "Simple Toast In Android", Toast.LENGTH_LONG); // initiate the Toast with context, message and duration for the Toast
                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);     // set gravity for the Toast.
                 toast.show(); // display the Toast
+                 public void onClick(View v) {
+                // Retrieve the Layout Inflater and inflate the layout from xml
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.custom_toast_layout,
+                        (ViewGroup) findViewById(R.id.toast_layout_root));
+                // get the reference of TextView and ImageVIew from inflated layout
+                TextView toastTextView = (TextView) layout.findViewById(R.id.toastTextView);
+                ImageView toastImageView = (ImageView) layout.findViewById(R.id.toastImageView);
+                // set the text in the TextView
+                toastTextView.setText("Custom Toast In Android");
+                // set the Image in the ImageView
+                toastImageView.setImageResource(R.drawable.ic_launcher);
+                
+
+            }
 
             }
         });
